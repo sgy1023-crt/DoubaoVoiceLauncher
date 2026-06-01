@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 识别模式选择 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="识别模式"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择如何识别打电话按钮"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="12dp" />
+
+        <RadioGroup
+            android:id="@+id/rgRecognizeMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_status"
+            android:padding="16dp">
+
+            <RadioButton
+                android:id="@+id/rbModeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="仅文字匹配（最快，依赖按钮文字）"
+                android:textSize="15sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/rbModeTemplate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="文字 + 图标模板匹配（推荐）"
+                android:textSize="15sp"
+                android:padding="8dp"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbModeAI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="文字 + 模板 + AI视觉识别（最准，需API）"
+                android:textSize="15sp"
+                android:padding="8dp" />
+
+        </RadioGroup>
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginVertical="20dp" />
+
+        <!-- AI API 配置 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI 视觉识别配置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择AI模式时需要配置。支持豆包、通义千问等兼容OpenAI格式的API"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="16dp" />
+
+        <!-- API URL -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="API 地址"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etApiUrl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="https://ark.cn-beijing.volces.com/api/v3/chat/completions"
+            android:textSize="13sp"
+            android:inputType="textUri"
+            android:background="@drawable/bg_status"
+            android:padding="12dp"
+            android:singleLine="true" />
+
+        <!-- API Key -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="API Key"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etApiKey"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="输入你的API Key"
+            android:textSize="14sp"
+            android:inputType="textPassword"
+            android:background="@drawable/bg_status"
+            android:padding="12dp"
+            android:singleLine="true" />
+
+        <!-- Model ID -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="模型 ID"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etModelId"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="doubao-vision-pro-32k"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:background="@drawable/bg_status"
+            android:padding="12dp"
+            android:singleLine="true" />
+
+        <!-- 提示 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="常用模型：\n· 豆包: doubao-vision-pro-32k\n· 通义千问: qwen-vl-plus\n· 智谱: glm-4v"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="2dp" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginVertical="20dp" />
+
+        <!-- 模板图片说明 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图标模板说明"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="将打电话按钮的图标截图放到以下目录：\n\napp/src/main/assets/templates/\n\n支持的文件名：\n· call_icon.png（默认）\n· phone_icon.png\n· call.png\n· custom_call_icon.png（自定义）\n\n建议截图大小：50x50 ~ 200x200 像素\n可以截取豆包APP中打电话按钮的图标"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp"
+            android:background="@drawable/bg_status"
+            android:padding="12dp" />
+
+        <!-- 保存按钮 -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="保存设置"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+</ScrollView>

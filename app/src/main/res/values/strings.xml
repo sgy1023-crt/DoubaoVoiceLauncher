@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">豆包语音唤醒</string>
+    <string name="accessibility_description">用于自动打开豆包APP并点击打电话按钮的无障碍服务</string>
+    <string name="btn_start_listening">开始监听</string>
+    <string name="btn_stop_listening">停止监听</string>
+    <string name="btn_open_accessibility">开启无障碍服务</string>
+    <string name="status_idle">未监听</string>
+    <string name="status_listening">正在监听中… 请说\"豆包豆包\"</string>
+    <string name="status_triggered">已唤醒！正在打开豆包…</string>
+    <string name="status_accessibility_off">无障碍服务未开启</string>
+    <string name="status_accessibility_on">无障碍服务已开启</string>
+    <string name="status_no_permission">缺少录音权限，请先授权</string>
+    <string name="notification_channel_name">语音监听服务</string>
+    <string name="notification_title">豆包语音唤醒</string>
+    <string name="notification_text">正在监听\"豆包豆包\"…</string>
+    <string name="fab_toggle_description">切换语音监听</string>
+    <string name="settings_description">识别设置</string>
+</resources>

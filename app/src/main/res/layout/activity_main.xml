@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/md_theme_surface"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/md_theme_onSurface"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Hero Status Card (Elevation 2) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/md_theme_primaryContainer">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Status Indicator -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/statusIndicator"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:background="@drawable/status_indicator_idle" />
+
+                        <TextView
+                            android:id="@+id/tvListeningStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/status_idle"
+                            android:textSize="18sp"
+                            android:textColor="@color/md_theme_onPrimaryContainer"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSettings"
+                            style="@style/Widget.Material3.Button.IconButton"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:contentDescription="设置"
+                            app:icon="@drawable/ic_settings"
+                            app:iconTint="@color/md_theme_onPrimaryContainer" />
+
+                    </LinearLayout>
+
+                    <!-- Description -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="对着手机说「豆包豆包」，自动打开豆包APP并拨打语音电话"
+                        android:textSize="14sp"
+                        android:textColor="@color/md_theme_onPrimaryContainer"
+                        android:alpha="0.8"
+                        android:lineSpacingExtra="4dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Engine Info Card (Elevation 1) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="12dp"
+                app:strokeColor="@color/md_theme_outline"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="语音引擎"
+                        android:textSize="14sp"
+                        android:textColor="@color/md_theme_onSurfaceVariant"
+                        android:textStyle="bold"
+                        android:alpha="0.6" />
+
+                    <TextView
+                        android:id="@+id/tvEngineInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="正在检测语音引擎..."
+                        android:textSize="14sp"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:fontFamily="monospace" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Accessibility Service Card (Elevation 1) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAccessibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="12dp"
+                app:strokeColor="@color/md_theme_outline"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivAccessibilityIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_accessibility_off"
+                            app:shapeAppearance="@style/ShapeAppearanceOverlay.Circle" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="无障碍服务"
+                                android:textSize="14sp"
+                                android:textColor="@color/md_theme_onSurfaceVariant"
+                                android:textStyle="bold"
+                                android:alpha="0.6" />
+
+                            <TextView
+                                android:id="@+id/tvAccessibilityStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/status_accessibility_off"
+                                android:textSize="14sp"
+                                android:textColor="@color/md_theme_error" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- 开启无障碍服务按钮（直接嵌入卡片内） -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenAccessibility"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/btn_open_accessibility"
+                        android:textSize="14sp"
+                        app:cornerRadius="12dp"
+                        app:backgroundTint="@color/md_theme_errorContainer"
+                        app:icon="@drawable/ic_settings_accessibility"
+                        app:iconGravity="textStart"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/fab_toggle_description"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        app:fabSize="normal"
+        app:backgroundTint="@color/md_theme_primary"
+        app:tint="@color/md_theme_onPrimary"
+        app:srcCompat="@drawable/ic_mic" />
+
+    <!-- Bottom hint -->
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提示：首次使用需要授权录音权限和开启无障碍服务"
+        android:textSize="12sp"
+        android:textColor="@color/md_theme_onSurfaceVariant"
+        android:alpha="0.6"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:paddingBottom="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="88dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

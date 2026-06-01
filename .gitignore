@@ -1,0 +1,18 @@
+# Gradle
+.gradle/
+build/
+
+# Local config
+local.properties
+
+# IDE
+.idea/
+*.iml
+
+# Screenshots (not part of the app)
+*.png
+!app/src/main/assets/**/*.png
+
+# OS
+.DS_Store
+Thumbs.db
